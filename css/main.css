@@ -257,8 +257,7 @@ main {
   .accordion__inner-container::after {
     content: "";
     position: absolute;
-    top: unset;
-    bottom: -50%;
+    top: -290px;
     left: 0;
     background-repeat: no-repeat;
     width: 24.875rem;
