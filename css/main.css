@@ -1,3 +1,18 @@
+/* Primary Colors */
+$VerydarkDesaturatedBlue: hsl(238, 29%, 16%);
+$SoftRed: hsl(14, 88%, 65%);
+/* Gradient Colors */
+$SoftViolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+$white:#fff;
+/* Neutral colors */
+$VerydarkGrayishBlue: hsl(237deg 42% 24%);
+$darkGrayishBlue: hsl(240, 6%, 50%);
+/* Divider */
+$lightGrayishBlue: hsl(240, 5%, 91%);
+/* Font weight */
+$fw-400: 400;
+$fw-700: 700;
 
 *,
 *::before,
@@ -7,9 +22,12 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   scroll-behavior: smooth;
 }
+
 
 img {
   width: 100%;
@@ -17,13 +35,12 @@ img {
   display: block;
 }
 
-button {
-  background: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
+button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
-
 .flex {
   display: flex;
   align-items: center;
@@ -42,7 +59,7 @@ button {
 }
 
 body {
-  background: linear-gradient(to bottom, hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  background: linear-gradient(to bottom, $SoftViolet, $softBlue);
   background-repeat: no-repeat;
   font-family: "Kumbh Sans", sans-serif;
   font-size: 0.75rem;
@@ -56,13 +73,13 @@ main {
 }
 
 .accordion {
-  background-color: #fff;
+  background-color: $white;
   border-radius: 1.25rem;
   width: 100%;
   max-width: 25rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
-  font-weight: 400;
+  font-weight: $fw-400
 }
 
 .accordion__inner-container {
@@ -85,6 +102,7 @@ main {
   z-index: 3;
 }
 
+
 /* Accordion Styles  */
 .accordion__content {
   flex-direction: column;
@@ -95,61 +113,59 @@ main {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 0.9375rem;
-  font-weight: 700;
+  font-weight: $fw-700;
 }
 
-.accordion__element-box {
+.accordion__element-box{
   width: 100%;
 }
 
 .accordion__summary {
   font-size: 0.875rem;
   width: 100%;
-  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+  border-bottom: 1px solid $lightGrayishBlue;
 }
 
 .btn:focus,
 .btn:focus-visible {
-  outline: 0.25em dashed hsl(14deg, 88%, 65%);
+  outline: 0.25em dashed $SoftRed;
 }
-
-.btn {
+.btn{
   width: 100%;
   justify-content: space-between;
   padding: 1rem 0;
   font-family: inherit;
-  color: hsl(237deg, 42%, 24%);
-  transition: 0.3s ease-in-out;
-}
-.btn:hover {
-  color: hsl(14deg, 88%, 65%);
-}
-.btn:focus, .btn:focus-visible {
-  font-weight: var(--fw-700);
+  color: $VerydarkGrayishBlue;
+  transition: .3s ease-in-out;
+  &:hover {
+    color: $SoftRed;
+  }
+  &:focus, &:focus-visible{
+    font-weight: var(--fw-700);
+  }
 }
 
 .arrow {
   transition: 0.25s ease;
+  &.rotate{
+    transform: rotate(-180deg);
+  }
 }
-.arrow.rotate {
-  transform: rotate(-180deg);
-}
-
 .answer {
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1.5;
-  color: hsl(240deg, 6%, 50%);
+  color: $darkGrayishBlue;
   opacity: 0;
   overflow: hidden;
   height: 0;
-  transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
-}
-.answer-appear {
-  opacity: 1;
-  overflow: visible;
-  height: 3.75rem;
+  transition: height .4s ease-in-out, opacity .2s ease-in-out;
+  &-appear{
+    opacity: 1;
+    overflow: visible;
+    height: 3.75rem;
+  }
 }
 
 .attribution {
@@ -167,11 +183,10 @@ main {
 }
 
 .link:hover {
-  color: rgb(16, 16, 233);
+  color: rgba(16, 16, 233,1);
 }
-
-.link:focus, .link:focus-visible {
-  outline: 0.3em dashed hsl(14deg, 88%, 65%);
+.link:focus, .link:focus-visible{
+  outline: .3em dashed $SoftRed
 }
 
 /* Media query for screens larger than 1000px */
@@ -179,9 +194,11 @@ main {
   body {
     padding: 8rem 1.5rem;
   }
+
   .accordion {
     max-width: 57.5rem;
   }
+
   .accordion::before {
     content: "";
     position: absolute;
@@ -194,11 +211,13 @@ main {
     height: 11.9375rem;
     z-index: 4;
   }
-  .accordion__inner-container {
+
+  .accordion__inner-container{
     padding: 4rem 5rem 4.6875rem 30.625rem;
     position: relative;
     overflow: hidden;
   }
+
   .accordion__inner-container::before {
     transform: translate(-100%, 0);
     background-image: url(../images/illustration-woman-online-desktop.svg);
@@ -207,11 +226,11 @@ main {
     height: 31.25rem;
     z-index: 3;
   }
+
   .accordion__inner-container::after {
     content: "";
     position: absolute;
-    top: unset;
-    bottom: -50%;
+    top: -290px;
     left: 0;
     background-repeat: no-repeat;
     width: 24.875rem;
@@ -219,10 +238,12 @@ main {
     transform: rotateY(180deg);
     background-image: url(../images/bg-pattern-desktop.svg);
   }
+
   .accordion__content {
     max-width: 21.875rem;
     align-items: flex-start;
   }
+
   .accordion__title {
     text-align: left;
   }
