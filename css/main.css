@@ -1,10 +1,15 @@
-
+/* Primary Colors */
+/* Gradient Colors */
+/* Neutral colors */
+/* Divider */
+/* Font weight */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -25,8 +30,12 @@ button {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* class for visually hide anything and keep it accessible */
@@ -42,6 +51,8 @@ button {
 }
 
 body {
+  background: -webkit-gradient(linear, left top, left bottom, from(hsl(273deg, 75%, 66%)), to(hsl(240deg, 73%, 65%)));
+  background: -o-linear-gradient(top, hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
   background: linear-gradient(to bottom, hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
   background-repeat: no-repeat;
   font-family: "Kumbh Sans", sans-serif;
@@ -60,7 +71,8 @@ main {
   border-radius: 1.25rem;
   width: 100%;
   max-width: 25rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
   font-weight: 400;
 }
@@ -76,7 +88,9 @@ main {
   position: absolute;
   top: -6.625rem;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   background-image: url(../images/illustration-woman-online-mobile.svg), url(../images/bg-pattern-mobile.svg);
   background-position: center top, center 6.5rem;
   background-repeat: no-repeat;
@@ -87,7 +101,10 @@ main {
 
 /* Accordion Styles  */
 .accordion__content {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .accordion__title {
@@ -115,10 +132,14 @@ main {
 
 .btn {
   width: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem 0;
   font-family: inherit;
   color: hsl(237deg, 42%, 24%);
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 .btn:hover {
@@ -129,21 +150,33 @@ main {
 }
 
 .arrow {
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
   transition: 0.25s ease;
 }
 .arrow.rotate {
-  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 .answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   line-height: 1.5;
   color: hsl(240deg, 6%, 50%);
   opacity: 0;
   overflow: hidden;
   height: 0;
+  -webkit-transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  -o-transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
   transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
 }
 .answer-appear {
@@ -163,6 +196,8 @@ main {
 .link {
   color: rgba(16, 16, 233, 0.788);
   text-decoration: none;
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
   transition: 0.25s ease;
 }
 
@@ -185,9 +220,11 @@ main {
   .accordion::before {
     content: "";
     position: absolute;
-    top: 60%;
-    left: -1.5rem;
-    transform: translate(-50%, -50%);
+    top: 260px;
+    left: -0.5rem;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     background-image: url(../images/illustration-box-desktop.svg);
     background-repeat: no-repeat;
     width: 11.9375rem;
@@ -200,7 +237,9 @@ main {
     overflow: hidden;
   }
   .accordion__inner-container::before {
-    transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+        -ms-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
     background-image: url(../images/illustration-woman-online-desktop.svg);
     background-position: left bottom;
     width: 33.375rem;
@@ -215,12 +254,15 @@ main {
     background-repeat: no-repeat;
     width: 24.875rem;
     height: 59.0625rem;
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
     background-image: url(../images/bg-pattern-desktop.svg);
   }
   .accordion__content {
     max-width: 21.875rem;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .accordion__title {
     text-align: left;
