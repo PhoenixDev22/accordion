@@ -220,8 +220,8 @@ main {
   .accordion::before {
     content: "";
     position: absolute;
-    top: 260px;
-    left: -0.5rem;
+    top: 300px;
+    left: 0;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -237,6 +237,7 @@ main {
     overflow: hidden;
   }
   .accordion__inner-container::before {
+    top: -4.625rem;
     -webkit-transform: translate(-100%, 0);
         -ms-transform: translate(-100%, 0);
             transform: translate(-100%, 0);
@@ -249,7 +250,7 @@ main {
   .accordion__inner-container::after {
     content: "";
     position: absolute;
-    top: -290px;
+    top: -270px;
     left: 0;
     background-repeat: no-repeat;
     width: 24.875rem;
@@ -268,3 +269,4 @@ main {
     text-align: left;
   }
 }
+
